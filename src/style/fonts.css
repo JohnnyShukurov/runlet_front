@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'HB';
+    src: url(../assets/fonts/HelveticaNeue-Bold.otf);
+}
+
+@font-face {
+    font-family: 'HM';
+    src: url(../assets/fonts/HelveticaNeue-Medium.otf);
+}
+
+@font-face {
+    font-family: "NR";
+    src: url(../assets/fonts/NotoSansDevanagari-Regular.ttf);
+}
+
+

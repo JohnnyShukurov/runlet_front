@@ -1,0 +1,17 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Устанавливаем необходимые зависимости для нативных модулей
+RUN apk add --no-cache python3 make g++
+
+COPY package*.json ./
+
+# Очищаем кэш npm и устанавливаем зависимости
+RUN npm cache clean --force && npm install
+
+COPY . .
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev", "--", "--host"]

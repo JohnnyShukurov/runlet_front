@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  vue-app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app                    # Синхронизация всех файлов
+      - /app/node_modules         # Кроме node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true  # Для лучшей работы hot reload
+    container_name: vue-app-dev
