@@ -1,74 +1,115 @@
 <template>
   <div class="teacher-page">
-    <!-- Header -->
-    <header>
-      <div class="header-box">
-        <!-- Logo SVG -->
-        <svg class="logo" width="135" height="25" viewBox="0 0 135 25" fill="none">
-          <path d="M0.175049 1.02436L9.71143 1.0513C11.5972 1.0513 13.1596 1.48232 14.3719 2.39824C15.5572 3.28723 16.1768 4.66111 16.1768 6.49296C16.1768 7.59745 15.9074 8.56726 15.3686 9.40236C14.8298 10.2375 14.0755 10.8301 13.1327 11.2073C14.7759 11.5305 15.7188 13.0391 15.9613 15.6791C15.9613 15.7599 15.9613 16.0293 16.0151 16.5142C16.0421 16.9722 16.069 17.3493 16.1229 17.6187C16.1498 17.8881 16.2037 18.2383 16.2576 18.6424C16.3115 19.0196 16.3923 19.3698 16.5 19.6392C16.6078 19.9085 16.7156 20.0971 16.8772 20.2318H12.5131C12.3514 19.9355 12.2437 19.5583 12.1898 19.1273C12.109 18.6963 12.0551 18.1306 12.0012 17.4302C11.9474 16.7297 11.9204 16.3526 11.9204 16.2718C11.7588 14.9248 11.4355 14.0089 10.8967 13.4701C10.358 12.9583 9.44204 12.6889 8.09509 12.6889H4.35058V20.2049H0.175049V1.02436ZM4.35058 4.36478V9.67175H8.33754C9.49592 9.67175 10.4118 9.48318 11.0584 9.10603C11.7049 8.72889 12.0551 8.02848 12.0551 6.95092C12.0551 5.92724 11.7318 5.25377 11.0853 4.90356C10.4388 4.52642 9.60367 4.36478 8.52612 4.36478H4.35058Z" fill="white"/>
-          <path d="M35.7797 1.02436V12.5542C35.7797 15.302 35.1062 17.3493 33.7862 18.6424C32.4662 19.9355 30.4188 20.582 27.6172 20.582C24.7617 20.582 22.6874 19.9355 21.3404 18.6155C19.9935 17.2955 19.3469 15.2481 19.3469 12.5003V1.02436H23.5494V12.5003C23.5494 14.0628 23.8457 15.2212 24.4384 15.9755C25.031 16.7297 26.1086 17.1069 27.6711 17.1069C29.1796 17.1069 30.2033 16.7297 30.7421 15.9755C31.2809 15.2212 31.5772 14.0628 31.5772 12.5003V1.02436H35.7797Z" fill="white"/>
-          <path d="M39.4221 20.2049V1.02436H43.7054L51.5985 13.8742V1.02436H55.6394V20.2049H51.4369L43.4899 7.32806V20.2049H39.4221Z" fill="white"/>
-          <path d="M72.9668 16.5951V20.2049H59.3895V1.02436H63.592V16.5951H72.9668Z" fill="white"/>
-          <path d="M112.102 1.02436V4.60723H106.337V20.2049H102.108V4.60723H96.3426V1.02436H112.102Z" fill="white"/>
-          <path d="M120.596 0.728027C119.546 2.82926 118.792 4.82274 118.307 6.70847C117.822 8.62113 117.606 10.7224 117.606 12.9852C117.606 16.9453 118.603 20.9592 120.65 25H117.418C116.286 23.3298 115.424 21.4171 114.805 19.3159C114.185 17.2147 113.889 15.1404 113.889 13.0661C113.889 10.9109 114.185 8.75583 114.778 6.54684C115.37 4.33784 116.259 2.39824 117.418 0.728027H120.596Z" fill="#AE3CE9"/>
-          <path d="M127.822 0.728027L131.001 0.754966C133.371 4.41866 134.584 8.40562 134.584 12.7428C134.584 14.7632 134.26 16.9453 133.641 19.2889C132.994 21.6596 132.132 23.5453 131.055 25H127.849C128.926 22.8179 129.681 20.7975 130.139 18.9387C130.597 17.08 130.839 14.9787 130.839 12.662C130.839 8.32481 129.815 4.33784 127.822 0.728027Z" fill="#AE3CE9"/>
-          <rect x="75.4462" y="0.842499" width="18.0996" height="19.3624" stroke="#AE3CE9"/>
-          <rect x="78.3926" y="13.8911" width="12.2067" height="3.78829" fill="#AE3CE9"/>
-          <rect x="78.3926" y="8.41908" width="12.2067" height="3.78829" fill="#AE3CE9"/>
-          <rect x="78.3926" y="2.94711" width="12.2067" height="3.78829" fill="#AE3CE9"/>
-        </svg>
-
-        <div class="icons">
-          <!-- Sun Icon -->
-          <svg class="sun" width="44" height="42" viewBox="0 0 44 42" fill="none">
-            <path d="M22.1178 11.9379C27.3514 11.9379 31.5524 16.0735 31.5524 21.1244C31.5523 26.1752 27.3513 30.3109 22.1178 30.3109C16.8844 30.3108 12.6833 26.1751 12.6832 21.1244C12.6832 16.0736 16.8844 11.938 22.1178 11.9379Z" stroke="white" stroke-width="2"/>
-            <path d="M22.6151 33.795V41" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22.6151 1V8.20497" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M35.7826 21.1242H42.9876" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M1 21.1242H8.20499" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8.20508 5.72049L13.2998 10.8152" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M31.559 31.3105L36.6537 36.4052" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13.2998 31.3105L8.20511 36.4052" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M36.6537 5.72049L31.559 10.8152" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-
-          <!-- Exit Icon -->
-          <svg class="exit" viewBox="0 0 43 44" fill="none" @click="logout">
-            <path d="M26.2162 13.1351V9C26.2162 5.13401 23.0822 2 19.2162 2H9C5.13401 2 2 5.13401 2 9V35C2 38.866 5.13401 42 9 42H19.2162C23.0822 42 26.2162 38.866 26.2162 35V30.7568" stroke="#AE3CE9" stroke-width="3" stroke-linecap="round"/>
-            <path d="M15.4055 22.4324H40.9189M40.9189 22.4324L36.0541 17.5676M40.9189 22.4324L36.0541 27.7297" stroke="#AE3CE9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
+    <Header 
+      :show-rating="false"
+      @theme-click="handleTheme"
+      @exit-click="handleExit"
+    />
+    
+    <main class="main-content">
       <div class="container">
-        <h2 class="your-courses">
-          <span class="bracket-title">{</span> 
-          Ваши курсы 
-          <span class="bracket-title">}</span>
-        </h2>
-        
-        <div class="courses-wrapper">
-          <section class="courses-grid">
-            <article 
-              v-for="course in courses" 
-              :key="course.id"
-              class="course-card"
-              :class="course.color"
-              @click="openCourse(course)"
-            >
-              <h3>{{ course.title }}</h3>
-              <p>
-                <span class="bracket">[</span> 
-                {{ course.teacher }} 
-                <span class="bracket">]</span>
-              </p>
-            </article>
-          </section>
+        <!-- Заголовки -->
+        <div class="titles-container">
+          <h2 class="section-title">
+            <span 
+              class="bracket-title"
+              :style="{ color: hoveredColor }"
+            >{</span> 
+            Группы 
+            <span 
+              class="bracket-title"
+              :style="{ color: hoveredColor }"
+            >}</span>
+          </h2>
 
-          <span class="arrow">&gt;&gt;</span>
+          <h2 class="section-title">
+            <span 
+              class="bracket-title"
+              :style="{ color: hoveredColor }"
+            >{</span> 
+            Курсы 
+            <span 
+              class="bracket-title"
+              :style="{ color: hoveredColor }"
+            >}</span>
+          </h2>
+        </div>
+
+        <!-- Контент -->
+        <div class="content-wrapper">
+          <!-- Секция Группы -->
+          <div class="groups-section">
+            <div 
+              v-for="courseGroup in groupedByCourse" 
+              :key="courseGroup.course"
+              class="course-group"
+            >
+              <div 
+                class="course-header"
+                @click="toggleCourse(courseGroup.course)"
+                @mouseenter="handleGroupHover(courseGroup.color)"
+                @mouseleave="handleGroupLeave"
+              >
+                <span 
+                  class="course-bracket"
+                  :style="{ color: courseGroup.color }"
+                >[</span>
+                <span class="course-name">{{ courseGroup.course }}</span>
+                <span 
+                  class="course-bracket"
+                  :style="{ color: courseGroup.color }"
+                >]</span>
+                <span 
+                  class="course-arrow"
+                  :class="{ 'expanded': expandedCourses.includes(courseGroup.course) }"
+                >▼</span>
+              </div>
+
+              <transition name="dropdown">
+                <div 
+                  v-if="expandedCourses.includes(courseGroup.course)"
+                  class="groups-list"
+                >
+                  <div 
+                    v-for="group in courseGroup.groups" 
+                    :key="group.id"
+                    class="group-item"
+                    :class="{ 'active': selectedGroup === group.id }"
+                    @click.stop="selectGroup(group.id)"
+                    @mouseenter="handleGroupHover(group.color)"
+                    @mouseleave="handleGroupLeave"
+                  >
+                    <span 
+                      v-if="group.notification"
+                      class="notification"
+                    ></span>
+                    <span class="group-code">{{ group.code }}</span>
+                  </div>
+                </div>
+              </transition>
+            </div>
+          </div>
+
+          <!-- Стрелка -->
+          <div class="arrow-container">
+            <span class="arrow" @click="handleGroupsArrow">&gt;&gt;</span>
+          </div>
+
+          <!-- Секция Курсы -->
+          <div class="courses-section">
+            <div class="courses-grid">
+              <Card
+                v-for="course in courses" 
+                :key="course.id"
+                :title="course.title"
+                :author="course.teacher"
+                :color="course.color"
+                @click="openCourse(course)"
+                @hover="handleCardHover"
+                @leave="handleCardLeave"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -76,40 +117,120 @@
 </template>
 
 <script>
+import Header from '../components/Header.vue'
+import Card from '../components/Card.vue'
+
 export default {
+  components: {
+    Header,
+    Card
+  },
   name: 'TeacherPage',
   data() {
     return {
+      hoveredColor: '#6ec895',
+      selectedGroup: null,
+      expandedCourses: [],
+      groups: [
+        { id: 1, code: '052270', color: '#AE3CE9', course: '4 курс', notification: true },
+        { id: 2, code: '052277', color: '#6EC895', course: '4 курс', notification: false },
+        { id: 3, code: '052370', color: '#6EC895', course: '3 курс', notification: false },
+        { id: 4, code: '052377', color: '#4A9EFF', course: '3 курс', notification: true },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+        { id: 5, code: '052404', color: 'orange', course: '2 курс', notification: false },
+
+      ],
       courses: [
         {
           id: 1,
           title: 'Языки программирования высокого уровня',
           teacher: 'Фамилия И.О.',
-          color: 'green'
+          color: '#6EC895'
         },
         {
           id: 2,
           title: 'Информационные системы и технологии',
           teacher: 'Фамилия И.О.',
-          color: 'violet'
-        },
-        {
-          id: 3,
-          title: 'Представление в информационных системах',
-          teacher: 'Фамилия И.О.',
-          color: 'orange'
+          color: '#AE3CE9'
         }
       ]
     }
   },
+  computed: {
+    groupedByCourse() {
+      const grouped = {};
+      
+      this.groups.forEach(group => {
+        if (!grouped[group.course]) {
+          grouped[group.course] = {
+            course: group.course,
+            groups: [],
+            color: group.color
+          };
+        }
+        grouped[group.course].groups.push(group);
+      });
+
+      // Сортировка по курсам (4, 3, 2)
+      return Object.values(grouped).sort((a, b) => {
+        const numA = parseInt(a.course);
+        const numB = parseInt(b.course);
+        return numB - numA;
+      });
+    }
+  },
   methods: {
-    logout() {
+    handleTheme() {
+      console.log('Theme clicked');
+    },
+    handleExit() {
       this.$router.push('/');
     },
+    toggleCourse(course) {
+      const index = this.expandedCourses.indexOf(course);
+      if (index > -1) {
+        this.expandedCourses.splice(index, 1);
+      } else {
+        this.expandedCourses.push(course);
+      }
+    },
+    selectGroup(groupId) {
+      this.selectedGroup = groupId;
+      console.log('Selected group:', groupId);
+    },
     openCourse(course) {
-      console.log('Opening course:', course.title);
-      // Здесь можно добавить навигацию к странице курса
-      // this.$router.push(`/course/${course.id}`);
+      this.$router.push({
+        path: `/course/${course.id}`,
+        query: { 
+          title: course.title,
+          teacher: course.teacher,
+          color: course.color
+        }
+      });
+    },
+    handleGroupHover(color) {
+      this.hoveredColor = color;
+    },
+    handleGroupLeave() {
+      this.hoveredColor = '#6ec895';
+    },
+    handleCardHover(color) {
+      this.hoveredColor = color;
+    },
+    handleCardLeave() {
+      this.hoveredColor = '#6ec895';
+    },
+    handleGroupsArrow() {
+      console.log('Groups arrow clicked');
     }
   }
 }
@@ -123,11 +244,19 @@ export default {
 }
 
 .teacher-page {
-  font-family: Arial, sans-serif;
-  background-color: #1E1E1E;
   min-height: 100vh;
-  padding: 20px;
+  background-color: #1E1E1E;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
   animation: contentFadeIn 0.6s ease-out 0.2s both;
+  overflow-y: auto;
+  display: flex;
 }
 
 @keyframes contentFadeIn {
@@ -141,144 +270,183 @@ export default {
   }
 }
 
-/* Header Styles */
-header {
-  margin-bottom: 60px;
-}
-
-.header-box {
-  margin-top: 35px;
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.logo {
-  width: 135px;
-  height: 25px;
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-
-.sun {
-  width: 42px;
-  height: 40px;
-}
-
-.exit {
-  height: 38.92px;
-  width: 40px;
-  cursor: pointer;
-  transition: all 300ms ease;
-}
-
-.exit:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 10px #AE3CE9);
-}
-
-/* Main Content */
 .container {
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.your-courses {
-  color: #AE3CE9;
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 40px;
-  text-align: left;
-}
-
-.bracket-title {
-  color: #AE3CE9;
-}
-
-.courses-wrapper {
+/* Заголовки */
+.titles-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 50px;
   gap: 40px;
 }
 
-.courses-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
+.section-title {
+  font-family: "HB";
+  font-size: 64px;
+  color: white;
   flex: 1;
 }
 
-.course-card {
-  background-color: #1E1E1E;
-  border-radius: 20px;
-  padding: 40px 30px;
-  border: 3px solid;
-  cursor: pointer;
-  transition: all 300ms ease;
-  min-height: 180px;
+.section-title:first-child {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.section-title:last-child {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.bracket-title {
+  color: #6EC895;
+  transition: color 300ms ease;
+}
+
+/* Контент - 3 контейнера */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: minmax(300px, 400px) auto minmax(600px, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+/* Секция Группы */
+.groups-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
 }
 
-.course-card.green {
-  border-color: #6EC895;
+.course-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.course-card.violet {
-  border-color: #AE3CE9;
+.course-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: all 300ms ease;
 }
 
-.course-card.orange {
-  border-color: #FF9D42;
+.course-header:hover .course-name {
+  opacity: 0.8;
 }
 
-.course-card:hover {
-  transform: translateY(-5px);
-}
-
-.course-card.green:hover {
-  box-shadow: 0 8px 30px rgba(110, 200, 149, 0.5);
-}
-
-.course-card.violet:hover {
-  box-shadow: 0 8px 30px rgba(174, 60, 233, 0.5);
-}
-
-.course-card.orange:hover {
-  box-shadow: 0 8px 30px rgba(255, 157, 66, 0.5);
-}
-
-.course-card h3 {
-  color: white;
+.course-bracket {
+  font-family: "HB";
   font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  line-height: 1.3;
+  transition: color 300ms ease;
 }
 
-.course-card p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
+.course-name {
+  color: white;
+  font-family: "HB";
+  font-size: 20px;
+  flex: 1;
 }
 
-.bracket {
-  color: rgba(255, 255, 255, 0.5);
+.course-arrow {
+  color: white;
+  font-size: 14px;
+  transition: transform 300ms ease;
+}
+
+.course-arrow.expanded {
+  transform: rotate(180deg);
+}
+
+/* Выпадающий список групп */
+.groups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 10px;
+}
+
+.group-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0 15px 30px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  transition: all 300ms ease;
+  margin-bottom: -1px; /* Убираем двойную границу между элементами */
+}
+
+.group-item:hover {
+  opacity: 0.8;
+}
+
+.group-code {
+  color: white;
+  font-family: "HM";
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.notification {
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #FF4444;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Dropdown анимация */
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: all 300ms ease;
+  overflow: hidden;
+}
+
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  max-height: 0;
+}
+
+.dropdown-enter-to,
+.dropdown-leave-from {
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Контейнер со стрелкой */
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .arrow {
-  color: #AE3CE9;
+  color: white;
   font-size: 48px;
-  font-weight: bold;
+  font-family: "NR";
   cursor: pointer;
   transition: all 300ms ease;
   user-select: none;
@@ -286,32 +454,42 @@ header {
 
 .arrow:hover {
   transform: translateX(10px);
-  text-shadow: 0 0 20px #AE3CE9;
+  text-shadow: 0 0 20px #6EC895;
+}
+
+/* Секция Курсы */
+.courses-section {
+  display: flex;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  width: 100%;
 }
 
 /* Responsive */
 @media (max-width: 1200px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .arrow-container {
+    order: 2;
+  }
+
+  .courses-section {
+    order: 3;
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+
   .courses-grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .header-box {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .your-courses {
-    font-size: 36px;
-  }
-
-  .courses-wrapper {
-    flex-direction: column;
-  }
-
-  .courses-grid {
-    grid-template-columns: 1fr;
   }
 
   .arrow {
@@ -320,6 +498,31 @@ header {
 
   .arrow:hover {
     transform: rotate(90deg) translateX(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .titles-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-name {
+    font-size: 18px;
+  }
+
+  .group-code {
+    font-size: 16px;
   }
 }
 </style>
