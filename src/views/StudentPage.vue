@@ -1,34 +1,79 @@
-<template>
-  <Header />
+<!-- <template>
   <div class="student-page">
-    <!-- Header -->
-
+    <Header 
+      :show-rating="false"
+      @theme-click="handleTheme"
+      @exit-click="handleExit"
+    />
     
-    <!-- Main Content -->
-    <main>
+    <main class="main-content">
       <div class="container">
         <h2 class="your-courses">
-          <span class="bracket-title">{</span> 
+          <span 
+            class="bracket-title"
+            :style="{ color: hoveredColor }"
+          >{</span> 
           Ваши курсы 
-          <span class="bracket-title">}</span>
+          <span 
+            class="bracket-title"
+            :style="{ color: hoveredColor }"
+          >}</span>
         </h2>
         
         <div class="courses-wrapper">
           <section class="courses-grid">
-            <article 
+            <Card
               v-for="course in courses" 
               :key="course.id"
-              class="course-card"
-              :class="course.color"
+              :title="course.title"
+              :author="course.teacher"
+              :color="course.color"
               @click="openCourse(course)"
-            >
-              <h3>{{ course.title }}</h3>
-              <p>
-                <span class="bracket">[</span> 
-                {{ course.teacher }} 
-                <span class="bracket">]</span>
-              </p>
-            </article>
+              @hover="handleCardHover"
+              @leave="handleCardLeave"
+            />
+          </section>
+
+          <span class="arrow">&gt;&gt;</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</template> -->
+<template>
+  <div class="student-page">
+    <Header 
+      :show-rating="false"
+      @theme-click="handleTheme"
+      @exit-click="handleExit"
+    />
+    
+    <main class="main-content">
+      <div class="container">
+        <h2 class="your-courses">
+          <span 
+            class="bracket-title"
+            :style="{ color: hoveredColor }"
+          >{</span> 
+          Ваши курсы 
+          <span 
+            class="bracket-title"
+            :style="{ color: hoveredColor }"
+          >}</span>
+        </h2>
+        
+        <div class="courses-container">
+          <section class="courses-grid">
+            <Card
+              v-for="course in courses" 
+              :key="course.id"
+              :title="course.title"
+              :author="course.teacher"
+              :color="course.color"
+              @click="openCourse(course)"
+              @hover="handleCardHover"
+              @leave="handleCardLeave"
+            />
           </section>
 
           <span class="arrow">&gt;&gt;</span>
@@ -37,30 +82,31 @@
     </main>
   </div>
 </template>
-
 <script>
-
 import Header from '../components/Header.vue'
+import Card from '../components/Card.vue'
 
 export default {
-    components: {
-    Header
+  components: {
+    Header,
+    Card
   },
   name: 'StudentPage',
   data() {
     return {
+      hoveredColor: '#6ec895',
       courses: [
         {
           id: 1,
           title: 'Языки программирования высокого уровня',
           teacher: 'Фамилия И.О.',
-          color: 'green'
+          color: '#6EC895'
         },
         {
           id: 2,
           title: 'Информационные системы и технологии',
           teacher: 'Фамилия И.О.',
-          color: 'violet'
+          color: '#AE3CE9'
         },
         {
           id: 3,
@@ -72,19 +118,28 @@ export default {
     }
   },
   methods: {
-    logout() {
+    handleTheme() {
+      console.log('Theme clicked');
+    },
+    handleExit() {
       this.$router.push('/');
     },
     openCourse(course) {
-  this.$router.push({
-    path: `/course/${course.id}`,
-    query: { 
-      title: course.title,
-      teacher: course.teacher,
-      color: course.color
+      this.$router.push({
+        path: `/course/${course.id}`,
+        query: { 
+          title: course.title,
+          teacher: course.teacher,
+          color: course.color
+        }
+      });
+    },
+    handleCardHover(color) {
+      this.hoveredColor = color;
+    },
+    handleCardLeave() {
+      this.hoveredColor = '#6ec895';
     }
-  });
-}
   }
 }
 </script>
@@ -97,11 +152,18 @@ export default {
 }
 
 .student-page {
-  font-family: Arial, sans-serif;
-  background-color: #1E1E1E;
   min-height: 100vh;
-  padding: 20px;
+  background-color: #1E1E1E;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
   animation: contentFadeIn 0.6s ease-out 0.2s both;
+  overflow-y: auto;
 }
 
 @keyframes contentFadeIn {
@@ -115,156 +177,55 @@ export default {
   }
 }
 
-/* Header Styles */
-header {
-  margin-bottom: 60px;
-}
-
-.header-box {
-  margin-top: 35px;
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.logo {
-  width: 135px;
-  height: 25px;
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-
-.sun {
-  width: 42px;
-  height: 40px;
-}
-
-.exit {
-  height: 38.92px;
-  width: 40px;
-  cursor: pointer;
-  transition: all 300ms ease;
-}
-
-.exit:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 10px #6EC895);
-}
-
-/* Main Content */
 .container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .your-courses {
-    font-family:"HB";
-    font-size: 64px;
-    color: #6ec895;
-    text-align: center;
-    margin-bottom: 50px;
+  font-family: "HB";
+  font-size: 64px;
+  color: #6ec895;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .bracket-title {
   color: #6EC895;
+  transition: color 300ms ease;
 }
 
-.courses-wrapper {
+.courses-container {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 40px;
+  justify-content: center;
 }
 
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
-  flex: 1;
-}
-
-.course-card {
-  max-width: 398px;
-  height: 476px;
-  background-color: #1E1E1E;
-  border-radius: 20px;
-  padding: 40px 30px;
-  border: 3px solid;
-  cursor: pointer;
-  transition: all 300ms ease;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.course-card.green {
-  border-color: #6EC895;
-}
-
-.course-card.violet {
-  border-color: #AE3CE9;
-}
-
-.course-card.orange {
-  border-color: #FF9D42;
-}
-
-.course-card:hover {
-  transform: translateY(-5px);
-}
-
-.course-card.green:hover {
-  box-shadow: 0 8px 30px rgba(110, 200, 149, 0.5);
-}
-
-.course-card.violet:hover {
-  box-shadow: 0 8px 30px rgba(174, 60, 233, 0.5);
-}
-
-.course-card.orange:hover {
-  box-shadow: 0 8px 30px rgba(255, 157, 66, 0.5);
-}
-
-.course-card h3 {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  line-height: 1.3;
-  font-family: "HM";
-}
-
-.course-card p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
-}
-
-.bracket {
-  color: rgba(255, 255, 255, 0.5);
+  max-width: 1200px;
+  width: 100%;
 }
 
 .arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   color: white;
   font-size: 48px;
-  font-family:"NR";
+  font-family: "NR";
   cursor: pointer;
   transition: all 300ms ease;
   user-select: none;
 }
 
-
 .arrow:hover {
-  transform: translateX(10px);
+  transform: translateY(-50%) translateX(10px);
   text-shadow: 0 0 20px #6EC895;
 }
 
@@ -276,17 +237,13 @@ header {
 }
 
 @media (max-width: 768px) {
-  .header-box {
-    flex-direction: column;
-    gap: 20px;
-  }
-
   .your-courses {
     font-size: 36px;
   }
 
-  .courses-wrapper {
+  .courses-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .courses-grid {
@@ -294,7 +251,9 @@ header {
   }
 
   .arrow {
+    position: static;
     transform: rotate(90deg);
+    margin-top: 20px;
   }
 
   .arrow:hover {
