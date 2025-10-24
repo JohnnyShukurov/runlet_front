@@ -205,7 +205,20 @@ export default {
     },
     selectGroup(groupId) {
       this.selectedGroup = groupId;
-      console.log('Selected group:', groupId);
+      
+      // Находим выбранную группу
+      const selectedGroupData = this.groups.find(g => g.id === groupId);
+      
+      // Переходим на страницу со списком студентов
+      this.$router.push({
+        path: '/studentslist',
+        query: { 
+          groupId: groupId,
+          groupCode: selectedGroupData.code,
+          course: selectedGroupData.course,
+          color: selectedGroupData.color
+        }
+      })
     },
     openCourse(course) {
       this.$router.push({
