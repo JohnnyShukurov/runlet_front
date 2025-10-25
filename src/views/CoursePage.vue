@@ -1,7 +1,7 @@
 <template>
   <div class="course-modules-page">
     <Header 
-      :show-rating="false"
+      :show-rating="true"
       @theme-click="handleTheme"
       @exit-click="handleExit"
     />

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from '../views/LoginPage.vue'
 import StudentPage from '../views/StudentPage.vue'
 import TeacherPage from '../views/TeacherPage.vue'
-import CoursePage from '../views/СoursePage.vue'
+import CoursePage from '../views/CoursePage.vue'
 import StudentList from '../views/StudentList.vue'
 
 const routes = [
