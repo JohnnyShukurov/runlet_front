@@ -138,11 +138,11 @@ const onExitClick = () => {
 
 .rating-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 4px;
   cursor: pointer;
+  gap: 30px;
   transition: opacity 300ms ease;
+
 }
 
 .rating-wrapper:hover {
@@ -156,9 +156,7 @@ const onExitClick = () => {
 
 .rating-text {
   color: white;
-  font-size: 14px;
-  font-weight: 500;
-  white-space: nowrap;
+  font-size: 32px;
   font-family: "HB";
 }
 
